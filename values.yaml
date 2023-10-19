@@ -1,0 +1,30 @@
+# Default values for openshift-operators.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+operator:
+  name: example-operator
+  channel: stable
+  version: v1.1.0
+  index: 
+    name: redhat-operators
+    namespace: openshift-marketplace
+  group: example-operator-group
+  approval: Automatic
+  clusterScoped: false
+  # config:
+  #   env:
+  #     - name: RELATED_IMAGE_EXTERNAL_DNS
+  #       value: quay.io/hyperkineticnerd/external-dns:latest
+
+
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
